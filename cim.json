@@ -1,0 +1,41 @@
+{
+    "@context": {
+      "@vocab": "http://example.com/cim#", 
+      "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "cim": "http://iec.ch/TC57/CIM#",
+      "name": "cim:name",
+      "voltageLevel": "cim:voltageLevel",
+      "capacity": "cim:capacity",
+      "location": "cim:location"
+    },
+    "@graph": [
+      {
+        "@id": "urn:uuid:4a2e6276-9e74-4d6e-8583-f3cfda35b9c7",
+        "@type": "cim:PowerTransformer",
+        "name": "Main Transformer",
+        "voltageLevel": "110kV",
+        "location": "Substation A"
+      },
+      {
+        "@id": "urn:uuid:834adb8d-8e9d-47b1-889b-71b4ae1f3b52",
+        "@type": "cim:Breaker",
+        "name": "High Voltage Breaker",
+        "voltageLevel": "110kV",
+        "location": "Substation B"
+      },
+      {
+        "@id": "urn:uuid:231dfb9e-c8e4-45a7-80c9-8bb5a5ad5f6f",
+        "@type": "cim:VoltageRegulator",
+        "name": "Voltage Regulator 1",
+        "voltageLevel": "10kV",
+        "location": "Substation C"
+      },
+      {
+        "@id": "urn:uuid:f6d3ed11-0a3c-4a0e-b4e0-2caba42e238a",
+        "@type": "cim:CapacitorBank",
+        "name": "Capacitor Bank",
+        "capacity": "50MVAR",
+        "location": "Substation D"
+      }
+    ]
+  }
