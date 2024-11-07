@@ -1,33 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:cim="http://iec.ch/TC57/2013/CIM-schema-cim16#"> 
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:cim="http://iec.ch/TC57/CIM#"
+  xmlns:name="cim:name"
+  xmlns:voltageLevel="cim:voltageLevel"
+  xmlns:capacity="cim:capacity"
+  xmlns:location="cim:location"
+>
+<md:FullModel rdf:ID="urn:uuid:aaaaa-bbbb-cccc-dddd-123431213">
+  <md:Model.created rdf:type="xsd:dateTime">2024-11-05T11:18:50.912401515+01:00</md:Model.created>
+  <md:Model.scenarioTime rdf:type="xsd:dateTime">2024-10-31T04:00:42.031706188+01:00</md:Model.scenarioTime>
+  <md:Model.description>Full model.</md:Model.description>
+  <md:Model.profile rdf:resource="http://iec.ch/TC57/61970-600/CoreEquipment-European/3/0"/>
+  <md:Model.profile rdf:resource="http://iec.ch/TC57/61970-600/Operation-European/3/0"/>
+  <md:Model.profile rdf:resource="http://iec.ch/TC57/61970-600/ShortCircuit-European/3/0"/>
+</md:FullModel>
 
- <cim:PowerTransformer rdf:ID="urn:uuid:4a2e6276-9e74-4d6e-8583-f3cfda35b9c7">
-    <cim:name>Main Transformer</cim:name>
- </cim:PowerTransformer>
+<cim:PowerTransformer rdf:ID="urn:uuid:4a2e6276-9e74-4d6e-8583-f3cfda35b9c7">
+  <name>Main Transformer</name>
+  <voltageLevel>110kV</voltageLevel>
+  <location>Substation A</location>
+</cim:PowerTransformer>
 
-  <!-- Substation -->
-  <cim:Substation rdf:ID="Substation1">
-    <cim:IdentifiedObject.name>Substation 1</cim:IdentifiedObject.name>
-  </cim:Substation>
+<cim:Breaker rdf:ID="urn:uuid:834adb8d-8e9d-47b1-889b-71b4ae1f3b52">
+  <name>High Voltage Breaker</name>
+  <voltageLevel>110kV</voltageLevel>
+  <location>Substation B</location>
+</cim:Breaker>
 
-  <!-- Voltage Level -->
-  <cim:VoltageLevel rdf:ID="VoltageLevel1">
-    <cim:IdentifiedObject.name>Voltage Level 1</cim:IdentifiedObject.name>
-    <cim:VoltageLevel.BaseVoltage rdf:resource="#BaseVoltage1"/>
-    <cim:VoltageLevel.Substation rdf:resource="#Substation1"/>
-  </cim:VoltageLevel>
-
-  <!-- Base Voltage -->
-  <cim:BaseVoltage rdf:ID="BaseVoltage1">
-    <cim:BaseVoltage.nominalVoltage>110.0</cim:BaseVoltage.nominalVoltage>
-  </cim:BaseVoltage>
-
-  <!-- Power Transformer -->
-  <cim:PowerTransformer rdf:ID="Transformer1">
-    <cim:IdentifiedObject.name>Transformer 1</cim:IdentifiedObject.name>
-    <cim:PowerTransformer.Substation rdf:resource="#Substation1"/>
-  </cim:PowerTransformer>
+<cim:VoltageRegulator rdf:ID="urn:uuid:231dfb9e-c8e4-45a7-80c9-8bb5a5ad5f6f">
+  <name>Voltage Regulator 1</name>
+  <voltageLevel>10kV</voltageLevel>
+  <location>Substation C</location>
+</cim:VoltageRegulator>
 
 <cim:CapacitorBank rdf:ID="urn:uuid:f6d3ed11-0a3c-4a0e-b4e0-2caba42e238a">
   <name>Capacitor Bank</name>
@@ -36,9 +41,14 @@
   <voltage>123</voltage>
   <cim:subStation rdf:resource="urn:uuid:aaaaaa-bbbb-cccc-ccccc-123123123"/>
   <cim:Line rdf:resource="urn:uuid:aaaaaa-eeee-cccc-ccccc-123123123"/>
-  <cim:Line rdf:resource="urn:uuid:aaaaaa-ffff-cccc-ccccc-123123123"/>
-
+  <cim:Line rdf:resource="urn:uuid:aaaaaa-bbbb-cccc-ccccc-123123123"/>
+  <cim:Line rdf:resource="urn:uuid:aaaaaa-eeee-cccc-ccccc-123123123"/>
+  <cim:Line rdf:resource="urn:uuid:aaaaaa-eeee-cccc-ccccc-123123123"/>
+  <cim:Line rdf:resource="urn:uuid:aaaaaa-eeee-cccc-ccchc-123123123"/>
+  <cim:Line rdf:resource="urn:uuid:aaaaaa-eeee-cccc-ccccc-123123123"/>
+  <cim:Line rdf:resource="urn:uuid:aaaaaa-eeee-cccc-ccccc-123123123"/>
+  <cim:Line rdf:resource="urn:uuid:aaaaaa-eeee-cccc-ccccc-123123123"/>
+  <cim:Line rdf:resource="urn:uuid:aaaaaa-eeee-cccc-ccccc-123123123"/>
 </cim:CapacitorBank>
-
 
 </rdf:RDF>

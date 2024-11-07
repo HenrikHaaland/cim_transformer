@@ -9,6 +9,32 @@
       "location": "cim:location"
     },
     "@graph": [
+
+      {
+        "@id": "urn:uuid:aaaaa-bbbb-cccc-dddd-123431213",
+        "@type": "md:FullModel",
+        "md:Model.created": {
+          "@value": "2024-11-05T11:18:50.912401515+01:00",
+          "@type": "xsd:dateTime"
+        },
+        "md:Model.scenarioTime": {
+          "@value": "2024-10-31T04:00:42.031706188+01:00",
+          "@type": "xsd:dateTime"
+        },
+        "md:Model.description": "Full model.",
+        "md:Model.profile": [
+          {
+            "@id": "http://iec.ch/TC57/61970-600/CoreEquipment-European/3/0"
+          },
+          {
+            "@id": "http://iec.ch/TC57/61970-600/Operation-European/3/0"
+          },
+          {
+            "@id": "http://iec.ch/TC57/61970-600/ShortCircuit-European/3/0"
+          }
+        ]
+      },
+
       {
         "@id": "urn:uuid:4a2e6276-9e74-4d6e-8583-f3cfda35b9c7",
         "@type": "cim:PowerTransformer",
@@ -72,31 +98,6 @@
         ]
 
  
-      },
-
-      {
-        "@id": "urn:uuid:aaaaa-bbbb-cccc-dddd-123431213",
-        "@type": "md:FullModel",
-        "md:Model.created": {
-          "@value": "2024-11-05T11:18:50.912401515+01:00",
-          "@type": "xsd:dateTime"
-        },
-        "md:Model.scenarioTime": {
-          "@value": "2024-10-31T04:00:42.031706188+01:00",
-          "@type": "xsd:dateTime"
-        },
-        "md:Model.description": "Full model.",
-        "md:Model.profile": [
-          {
-            "@id": "http://iec.ch/TC57/61970-600/CoreEquipment-European/3/0"
-          },
-          {
-            "@id": "http://iec.ch/TC57/61970-600/Operation-European/3/0"
-          },
-          {
-            "@id": "http://iec.ch/TC57/61970-600/ShortCircuit-European/3/0"
-          }
-        ]
       }
     ]
 
