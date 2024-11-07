@@ -1,0 +1,14 @@
+{
+    "@context": {
+      "ex": "http://example.com/",
+      "@vocab": "http://example.org/"
+    },
+    "@graph": [
+      {
+        "@id": "ex:person1",
+        "@type": "ex:Person",
+        "name": "John Doe",
+        "knows": { "@id": "ex:person2" }
+      }
+    ]
+  }
