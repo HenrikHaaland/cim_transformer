@@ -76,4 +76,17 @@ The program would generate the following XML:
 </rdf:RDF>
 ```
 
+## **Usage**
+To use this program:
+
+1. Save it as cimtransformer.py.
+2. Run it with a JSON file:
+```shell
+python cimtransformer.py <JSON_filename>
+```
+If the filename is not provided, the program will print a usage message.
+
+## **Note**
+This program supports simple JSON-LD structures, handling dictionaries, lists, and basic key-value pairs. Complex JSON structures may require modifications for accurate conversion.
+
 
