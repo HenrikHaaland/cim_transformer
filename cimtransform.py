@@ -27,7 +27,7 @@ def read_json_file(file_name):
             print(f"<{entity_type} rdf:ID=\"{id}\">")
             for key, value in entity.items():
                 if key.startswith("http"):
-                    print("the tag can not start on http or https. you must define namespace")
+                    print(f"The tag {key} can not start on http or https. you must define namespace", file=sys.stderr)
                     sys.exit(1)
                 if key != "@id" and key != "@type": 
                     if type(value) is dict:
