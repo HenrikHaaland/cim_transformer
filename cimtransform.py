@@ -28,14 +28,18 @@ def read_json_file(file_name):
             for key, value in entity.items():
                 if key != "@id" and key != "@type": 
                     if type(value) is dict:
-                        print(f"  <{key} rdf:resource=\"{value.get("@id")}\"/>")
+                        if value.get("@id") is not None:
+                            print(f"  <{key} rdf:resource=\"{value.get("@id")}\"/>")
+                        else:
+                            print(f"  <{key} rdf:type=\"{value.get("@type")}\">{value.get("@value")}</{key}>")
                     elif type(value) is list:
                         for v in value:
                             print(f"  <{key} rdf:resource=\"{v.get("@id")}\"/>")
                     else:
                         print(f"  <{key}>{value}</{key}>")
-            print(f"</{entity_type}>")
-
+            print(f"</{entity_type}>\n")
+            
+        print("</rdf:RDF>")
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
