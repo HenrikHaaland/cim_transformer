@@ -12,12 +12,29 @@ def logg(message):
 def read_json_file(file_name):
     with open(file_name, 'r') as file:
         data = json.load(file)
+
+        print("<?xml version=\"1.0\" encoding=\"UTF-8\"?>")
+        print(f"<rdf:RDF")
+
+        for key, value in data.get("@context").items():
+            if key != "@vocab":
+                print(f"  xmlns:{key}=\"{value}\"")
+        print(">")
+                
         for entity in data.get("@graph") :
-            print(entity.get("name"))
             id = entity.get("@id")
-            type = entity.get("@type")
-            print(f"<{type} rdf:ID=\"{id}\">")
-            print(f"</{type}>")
+            entity_type = entity.get("@type")
+            print(f"<{entity_type} rdf:ID=\"{id}\">")
+            for key, value in entity.items():
+                if key != "@id" and key != "@type": 
+                    if type(value) is dict:
+                        print(f"  <{key} rdf:resource=\"{value.get("@id")}\"/>")
+                    elif type(value) is list:
+                        for v in value:
+                            print(f"  <{key} rdf:resource=\"{v.get("@id")}\"/>")
+                    else:
+                        print(f"  <{key}>{value}</{key}>")
+            print(f"</{entity_type}>")
 
 
 if __name__ == "__main__":

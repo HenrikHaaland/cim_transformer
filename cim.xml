@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:cim="http://iec.ch/TC57/2013/CIM-schema-cim16#">
+         xmlns:cim="http://iec.ch/TC57/2013/CIM-schema-cim16#"> 
 
  <cim:PowerTransformer rdf:ID="urn:uuid:4a2e6276-9e74-4d6e-8583-f3cfda35b9c7">
     <cim:name>Main Transformer</cim:name>
@@ -28,5 +28,17 @@
     <cim:IdentifiedObject.name>Transformer 1</cim:IdentifiedObject.name>
     <cim:PowerTransformer.Substation rdf:resource="#Substation1"/>
   </cim:PowerTransformer>
+
+<cim:CapacitorBank rdf:ID="urn:uuid:f6d3ed11-0a3c-4a0e-b4e0-2caba42e238a">
+  <name>Capacitor Bank</name>
+  <capacity>50MVAR</capacity>
+  <location>Substation D</location>
+  <voltage>123</voltage>
+  <cim:subStation rdf:resource="urn:uuid:aaaaaa-bbbb-cccc-ccccc-123123123"/>
+  <cim:Line rdf:resource="urn:uuid:aaaaaa-eeee-cccc-ccccc-123123123"/>
+  <cim:Line rdf:resource="urn:uuid:aaaaaa-ffff-cccc-ccccc-123123123"/>
+
+</cim:CapacitorBank>
+
 
 </rdf:RDF>

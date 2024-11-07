@@ -35,7 +35,43 @@
         "@type": "cim:CapacitorBank",
         "name": "Capacitor Bank",
         "capacity": "50MVAR",
-        "location": "Substation D"
+        "location": "Substation D",
+        "voltage": 123,
+
+        "cim:subStation": {
+          "@id": "urn:uuid:aaaaaa-bbbb-cccc-ccccc-123123123"
+        },
+        "cim:Line": [
+          {
+            "@id": "urn:uuid:aaaaaa-eeee-cccc-ccccc-123123123"
+          },
+          {
+            "@id": "urn:uuid:aaaaaa-bbbb-cccc-ccccc-123123123"
+          },
+          {
+            "@id": "urn:uuid:aaaaaa-eeee-cccc-ccccc-123123123"
+          },
+          {
+            "@id": "urn:uuid:aaaaaa-eeee-cccc-ccccc-123123123"
+          },
+          {
+            "@id": "urn:uuid:aaaaaa-eeee-cccc-ccchc-123123123"
+          },
+          {
+            "@id": "urn:uuid:aaaaaa-eeee-cccc-ccccc-123123123"
+          },
+          {
+            "@id": "urn:uuid:aaaaaa-eeee-cccc-ccccc-123123123"
+          },
+          {
+            "@id": "urn:uuid:aaaaaa-eeee-cccc-ccccc-123123123"
+          },
+          {
+            "@id": "urn:uuid:aaaaaa-eeee-cccc-ccccc-123123123"
+          }
+        ]
+
+ 
       }
     ]
   }
